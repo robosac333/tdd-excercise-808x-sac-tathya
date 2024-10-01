@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cpp-boilerplate-v2
 
 # C++ Boilerplate v2 Badges
@@ -230,3 +231,6 @@ Either way, this should produce the `compile_commands.json` file.  Now, you can 
 1. Move the cursor to the `dummy()` function call and press the `<M-.>` key (or xref-find-definitions).  Emacs should automatically open `cpp-boilerplate-v2/include/lib.hpp` and place the curse at line 5, where the `dummy` function is defined.
 
 1. Close the editor, delete the `compile_commands.json` file and repeat.  Verify that *step 2 does not work anymore*.
+=======
+# tdd-excercise-808x-sac-tathya
+>>>>>>> upstream/main

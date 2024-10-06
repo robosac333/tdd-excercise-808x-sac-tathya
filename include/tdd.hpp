@@ -1,14 +1,20 @@
 #ifndef TDD_HPP
 #define TDD_HPP
 
-#include "getter_setter.hpp"
 #include <iostream>
 
 /**
  * @class PIDController
  * @brief Inherits getter and setter methods from GetterSetter and implements PID control logic.
  */
-class PIDController : public GetterSetter {
+class PIDController {
+
+private:
+    double Kp;
+    double Ki;
+    double Kd;
+    double dt;
+
 public:
     double setpoint; ///< Target value for the controlled system
     double current_value; ///< Current value of the controlled variable
@@ -57,7 +63,7 @@ public:
      * @brief Updates the PID controller for one time step and computes the output.
      * @return The computed control output.
      */
-    double compute(double setpoint, double val);
+    double compute_error(double setpoint, double val);
 };
 
 #endif // TDD_HPP

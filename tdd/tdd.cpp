@@ -4,12 +4,9 @@
 
 
 // Implementing PID class
-PIDController::PIDController(double Kp, double Ki, double Kd, double setpoint, double current_value, double dt)
-    : GetterSetter(), setpoint(setpoint), current_value(current_value) { // Call to base class constructor
-    this->setKp(Kp);
-    this->setKi(Ki); 
-    this->setKd(Kd); 
-    this->setdt(dt);  // Set dt correctly
+PIDController::PIDController(double Kp_, double Ki_, double Kd_, double setpoint, double current_value, double dt_)
+    : Kp(Kp_), Kd(Kd_), Ki(Ki_), setpoint(setpoint), current_value(current_value), dt(dt_) { 
+    // Call to base class constructor
 }
 
 // Method to implement proportional control
@@ -39,7 +36,7 @@ double PIDController::calcOutput(double error){
 };
 
 // Method to implement derivative control
-double PIDController::compute(double setpoint, double current_value){
+double PIDController::compute_error(double setpoint, double current_value){
     // Implement here
 };
 

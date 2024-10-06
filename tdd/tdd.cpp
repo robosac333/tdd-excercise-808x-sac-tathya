@@ -37,6 +37,6 @@ double PIDController::calcOutput(double error){
 
 // Method to implement derivative control
 double PIDController::compute_error(double setpoint, double current_value){
-    // Implement here
+    // return setpoint - current_value;
 };
 

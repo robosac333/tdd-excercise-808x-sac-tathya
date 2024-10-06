@@ -1,55 +1,55 @@
-#include<gtest/gtest.h>
-
+#include <gtest/gtest.h>
 #include "../tdd/tdd.cpp"
-#include <iostream>
+#include <cmath>
 
-int main(){
+class PIDControllerTest : public ::testing::Test {
+protected:
+    PIDController* pid;
 
-PIDController pid(0.8, 0.6, 0.3, 20.0, 30.0, 0.1);
+    void SetUp() override {
+        // This is called before each test
+        pid = new PIDController(0.8, 0.6, 0.3, 20.0, 30.0, 0.1);
+    }
 
-    double setpoint = pid.setpoint;
-    double output_value = pid.current_value;
+    void TearDown() override {
+        // This is called after each test
+        delete pid;
+    }
+};
 
-    std::cout << "Setpoint: " << setpoint << std::endl;
-
-    double integral = 0;
-    double pre_error = 0;
-    double max = 100;
-    double min = -100;
-
-    for(int i=0; i<=100; i++){
-        double error = pid.compute_error(setpoint, output_value);
-        
-        double proportional_term = pid.PropControl(error);
-
-        double integral_term = pid.IntControl(error);
-
-        double derivative_term = pid.DerControl(error);
-
-        double output_value = pid.calcOutput(error);
-
-        // Restrict to max/min
-        if( output_value > max )
-            output_value = max;
-        else if( output_value < min )
-            output_value = min;
-
-        pre_error = error;
-
-        std::cout << "Current Value: " << output_value << std::endl;
-
-}
+// Test Proportional Control
+TEST_F(PIDControllerTest, ProportionalControl) {
+    EXPECT_DOUBLE_EQ(pid->PropControl(-10), -8.0);
+    EXPECT_DOUBLE_EQ(pid->PropControl(5), 4.0);
 }
 
-TEST(tdd_test, this_should_pass) {
-  EXPECT_EQ(1, 1);
+// Test Integral Control (this will fail as it's not implemented)
+TEST_F(PIDControllerTest, IntegralControl) {
+    EXPECT_DOUBLE_EQ(pid->IntControl(-10), 0.0);
 }
 
-TEST(dummy_test, this_should_pass_too) {
-  EXPECT_EQ(my_function1(3), 3);
+// Test Derivative Control (this will fail as it's not implemented)
+TEST_F(PIDControllerTest, DerivativeControl) {
+    EXPECT_DOUBLE_EQ(pid->DerControl(-10), 0.0);
 }
 
-TEST(dummy_test, this_will_fail) {
-  EXPECT_EQ(my_function2(3.2), 3.2);
+// Test Calculate Output (this will fail as it depends on unimplemented methods)
+TEST_F(PIDControllerTest, CalculateOutput) {
+    EXPECT_THROW(pid->calcOutput(-10), std::runtime_error);
 }
 
+// Test Compute Error
+TEST_F(PIDControllerTest, ComputeError) {
+    EXPECT_DOUBLE_EQ(pid->compute_error(20, 30), 10.0);
+    EXPECT_DOUBLE_EQ(pid->compute_error(30, 20), 10.0);
+}
+
+// Test full PID computation (this will fail as it depends on unimplemented methods)
+TEST_F(PIDControllerTest, FullPIDComputation) {
+    EXPECT_THROW(pid->compute_error(20, 30), std::runtime_error);
+}
+
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

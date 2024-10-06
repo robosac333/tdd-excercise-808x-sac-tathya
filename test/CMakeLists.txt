@@ -13,12 +13,12 @@ target_include_directories(tdd-test PUBLIC
   )
 
 # Any dependent libraires needed to build this target.
-target_link_libraries(cpp-test PUBLIC
+target_link_libraries(tdd-test PUBLIC
   # list of libraries:
   gtest
-  test
+  tdd
   )
 
 # Enable CMake’s test runner to discover the tests included in the
 # binary, using the GoogleTest CMake module.
-gtest_discover_tests(cpp-test)
+gtest_discover_tests(tdd-test)

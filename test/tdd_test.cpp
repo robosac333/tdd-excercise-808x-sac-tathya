@@ -40,7 +40,7 @@ TEST_F(PIDControllerTest, CalculateOutput) {
 
 // Test Compute Error
 TEST_F(PIDControllerTest, ComputeError) {
-    EXPECT_DOUBLE_EQ(pid->compute_error(20, 30), 10.0);
+    EXPECT_DOUBLE_EQ(pid->compute_error(20, 30), -10.0);
     EXPECT_DOUBLE_EQ(pid->compute_error(30, 20), 10.0);
 }
 

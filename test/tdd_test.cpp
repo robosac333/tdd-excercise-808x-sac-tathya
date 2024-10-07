@@ -25,12 +25,12 @@ TEST_F(PIDControllerTest, ProportionalControl) {
 
 // Test Integral Control (this will fail as it's not implemented)
 TEST_F(PIDControllerTest, IntegralControl) {
-    EXPECT_DOUBLE_EQ(pid->IntControl(-10), 0.0);
+    EXPECT_EQ(pid->IntControl(-10), 10.0);
 }
 
 // Test Derivative Control (this will fail as it's not implemented)
 TEST_F(PIDControllerTest, DerivativeControl) {
-    EXPECT_DOUBLE_EQ(pid->DerControl(-10), 0.0);
+    EXPECT_DOUBLE_EQ(pid->DerControl(-10), 10.0);
 }
 
 // Test Calculate Output (this will fail as it depends on unimplemented methods)

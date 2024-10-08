@@ -1,6 +1,4 @@
-#ifndef TDD_HPP
-#define TDD_HPP
-
+#pragma once
 #include <iostream>
 
 /**
@@ -16,20 +14,25 @@ private:
     double dt;
 
 public:
-    double setpoint; ///< Target value for the controlled system
-    double current_value; ///< Current value of the controlled variable
+    double setpoint; // Target value for the controlled system
+    double current_value; // Current value of the controlled variable
+    double prev_error; //Previous error for calculating derivative
+    double integral; // integral 
+    double derivative; // derivative
 
     /**
      * @brief Constructor to initialize PID controller parameters.
-     *
      * @param Kp Proportional gain
      * @param Ki Integral gain
      * @param Kd Derivative gain
      * @param setpoint Desired target value for the controlled system
      * @param current_value Current value of the controlled variable
+     * @param prev_error This is to keep track of error for the next cycle
+     * @param integral to calculate Ki
+     * @param derivative to calculate Kd
      * @param dt Time step between updates
      */
-    PIDController(double Kp, double Ki, double Kd, double setpoint, double current_value, double dt);
+    PIDController(double Kp, double Ki, double Kd, double setpoint, double current_value, double dt, double prev_error, double integral, double derivative);
 
     /**
      * @brief Computes the proportional term of the PID control.
@@ -65,5 +68,3 @@ public:
      */
     double compute_error(double setpoint, double val);
 };
-
-#endif // TDD_HPP

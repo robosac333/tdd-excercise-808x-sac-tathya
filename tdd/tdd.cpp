@@ -4,8 +4,8 @@
 
 
 // Implementing PID class
-PIDController::PIDController(double Kp_, double Ki_, double Kd_, double setpoint, double current_value, double dt_)
-    : Kp(Kp_), Kd(Kd_), Ki(Ki_), setpoint(setpoint), current_value(current_value), dt(dt_) { 
+PIDController::PIDController(double Kp_, double Ki_, double Kd_, double setpoint, double current_value, double dt_, double prev_error, double integral, double derivative)
+    : Kp(Kp_), Kd(Kd_), Ki(Ki_), setpoint(setpoint), current_value(current_value), dt(dt_), prev_error(prev_error), integral(integral), derivative(integral) { 
     // Call to base class constructor
 }
 

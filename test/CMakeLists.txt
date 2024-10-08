@@ -1,6 +1,7 @@
 # Any C++ source files needed to build this target (cpp-test).
 add_executable(tdd-test
   # list of source cpp files:
+  main.cpp
   tdd_test.cpp
   )
 

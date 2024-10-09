@@ -1,6 +1,8 @@
 #include <gtest/gtest.h>
-#include "../tdd/tdd.cpp"
+
 #include <cmath>
+
+#include "../tdd/tdd.cpp"
 
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);

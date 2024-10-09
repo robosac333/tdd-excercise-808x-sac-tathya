@@ -8,6 +8,9 @@
 1. Mohammed Munawwar (Driver)
 2. FNU Koustubh (Navigator)
 
+# C++ Boilerplate v2 Badges
+![CICD Workflow status](https://github.com/robosac333/tdd-excercise-808x-sac-tathya/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/robosac333/tdd-excercise-808x-sac-tathya/branch/main/graph/badge.svg)](https://codecov.io/gh/robosac333/tdd-excercise-808x-sac-tathya) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # PID Controller
 
 ## Table of Contents

@@ -1,4 +1,4 @@
 /build
 /docs
-compile_commands.jsom
+compile_commands.json
 .cache

@@ -61,23 +61,6 @@ This method computes the integral control term by accumulating the error over ti
 - `double PIDController::DerControl(double error)`
 This method computes the derivative control term based on the rate of change of the error.
 
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/pid-controller.git
-    ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd pid-controller
-    ```
-
-3. Install dependencies (if any):
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ## Building and running
  ```bash
  # Download the code:

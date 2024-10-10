@@ -94,3 +94,8 @@ This method computes the derivative control term based on the rate of change of 
 # Clean and start over:
   rm -rf build/
 ```
+
+## To-Do
+- From the history report of Github CI, it can be seen that all the tests behave according to the program design and nothing fails.
+- We think that given the program designed for 2D PID Controller, there are enough tests and don't think other tests are necessary
+- Further we can extend the program in the 3D coordinate system for real-world control.

@@ -61,23 +61,6 @@ This method computes the integral control term by accumulating the error over ti
 - `double PIDController::DerControl(double error)`
 This method computes the derivative control term based on the rate of change of the error.
 
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/pid-controller.git
-    ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd pid-controller
-    ```
-
-3. Install dependencies (if any):
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ## Building and running
  ```bash
  # Download the code:
@@ -111,3 +94,8 @@ This method computes the derivative control term based on the rate of change of 
 # Clean and start over:
   rm -rf build/
 ```
+
+## To-Do
+- From the history report of Github CI, it can be seen that all the tests behave according to the program design and nothing fails.
+- We think that given the program designed for 2D PID Controller, there are enough tests and don't think other tests are necessary
+- Further we can extend the program in the 3D coordinate system for real-world control.
